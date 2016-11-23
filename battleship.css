@@ -1,10 +1,13 @@
 table {
-  width: 600px;
-  height: 600px;
   border: 1px solid black;
 }
 
 td {
-  width: 10px;
-  height: 10px;
+  width: 70px;
+  height: 70px;
+  border: 1px solid black;
+}
+
+.clicked{
+  background: blue;
 }
