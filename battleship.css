@@ -8,6 +8,10 @@ td {
   border: 1px solid black;
 }
 
-.clicked{
+.clicked {
   background: blue;
+}
+
+.ship {
+  background: red;
 }

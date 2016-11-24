@@ -1,3 +1,17 @@
+var board = [
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+            ];
+var SHIP = 1;
+
 $(document).ready(function() {
 
   //create 10x10 board with individual cell ids and row ids
@@ -12,13 +26,37 @@ $(document).ready(function() {
     }
   }
 
-
+setShips();
 
 });
 
-var missiles = 25;
-
+// missile counter that starts at 1
+var missiles = 1;
+// missile function that shows user how many missiles have been used
 function counter() {
-  console.log("You have " + missiles + " move(s) left.");
-  missiles--;
+  //missile counter stops at 25
+  if (missiles < 26) {
+    console.log("You have used " + missiles + " missle(s).");
+    missiles++;
+  }
+}
+
+var shipSpots = [];
+
+//place ships on board
+function setShips() {
+  var row;
+  var cell;
+  // produced a random location for the ship to go
+  for (i = 0; i < 5; i++) {
+    row = Math.floor(Math.random() * 10);
+    cell = Math.floor(Math.random() * 10);
+    console.log(row + " " + cell + " " + i);
+    // made sure the ships didn't go into the same cell.
+    if (board[row][cell] != SHIP) {
+      board[row][cell] = SHIP;
+      // stored location of ships in an empty array. HooRay!
+      shipSpots.push([row, cell]);
+    }
+  }
 }
