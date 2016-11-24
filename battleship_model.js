@@ -38,6 +38,8 @@ function counter() {
   if (missiles < 26) {
     console.log("You have used " + missiles + " missle(s).");
     missiles++;
+  } else {
+    // PLACE LOSE STATEMENT HERE
   }
 }
 
